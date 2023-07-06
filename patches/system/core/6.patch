@@ -1,0 +1,31 @@
+From 4c82b21be73cf77a7de90da6d566d3aa38055735 Mon Sep 17 00:00:00 2001
+From: Pranav Vashi <neobuddy89@gmail.com>
+Date: Sat, 3 Sep 2022 15:14:12 +0530
+Subject: [PATCH] init: Update properties for snet spoof
+
+Signed-off-by: Pranav Vashi <neobuddy89@gmail.com>
+---
+ init/property_service.cpp | 3 ++-
+ 1 file changed, 2 insertions(+), 1 deletion(-)
+
+diff --git a/init/property_service.cpp b/init/property_service.cpp
+index eaa2d83cb6c9..bd47086398e8 100644
+--- a/init/property_service.cpp
++++ b/init/property_service.cpp
+@@ -1300,13 +1300,14 @@ static void SetSafetyNetProps() {
+     InitPropertySet("ro.boot.vbmeta.device_state", "locked");
+     InitPropertySet("ro.boot.verifiedbootstate", "green");
+     InitPropertySet("ro.boot.veritymode", "enforcing");
+-    InitPropertySet("ro.boot.veritymode", "enforcing");
+     InitPropertySet("ro.boot.warranty_bit", "0");
+     InitPropertySet("ro.warranty_bit", "0");
+     InitPropertySet("ro.debuggable", "0");
+     InitPropertySet("ro.secure", "1");
+     InitPropertySet("ro.build.type", "user");
++    InitPropertySet("ro.build.keys", "release-keys");
+     InitPropertySet("ro.build.tags", "release-keys");
++    InitPropertySet("ro.system.build.tags", "release-keys");
+     InitPropertySet("ro.vendor.boot.warranty_bit", "0");
+     InitPropertySet("ro.vendor.warranty_bit", "0");
+     InitPropertySet("vendor.boot.vbmeta.device_state", "locked");
+

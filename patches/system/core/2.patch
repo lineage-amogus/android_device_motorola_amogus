@@ -1,0 +1,28 @@
+From c20499f178ead88ac2397434b3eb92acd45d4eb6 Mon Sep 17 00:00:00 2001
+From: Jarl-Penguin <jarlpenguin@outlook.com>
+Date: Wed, 16 Jun 2021 11:28:46 +0000
+Subject: [PATCH] init: Don't spoof SafetyNet properties in recovery mode
+
+Change-Id: Ib6d3808c3b8f3e0cffab685a24d3cdd436b0fe9b
+Signed-off-by: neobuddy89 <neobuddy89@gmail.com>
+Signed-off-by: Pranav Vashi <neobuddy89@gmail.com>
+---
+ init/property_service.cpp | 4 +++-
+ 1 file changed, 3 insertions(+), 1 deletion(-)
+
+diff --git a/init/property_service.cpp b/init/property_service.cpp
+index 8fa0eef7d752..1614742053a0 100644
+--- a/init/property_service.cpp
++++ b/init/property_service.cpp
+@@ -1313,7 +1313,9 @@ void PropertyInit() {
+     // checks pass. This needs to be done before parsing the kernel cmdline as
+     // these properties are read-only and will be set to invalid values with
+     // androidboot cmdline arguments.
+-    SetSafetyNetProps();
++    if (!IsRecoveryMode()) {
++        SetSafetyNetProps();
++    }
+ 
+     // If arguments are passed both on the command line and in DT,
+     // properties set in DT always have priority over the command-line ones.
+
