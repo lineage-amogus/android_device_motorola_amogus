@@ -63,10 +63,11 @@ upload_build() {
       cd device/motorola/amogus
 
       # Fill the tag and file path in the git release upload command
-      git release upload --tag "$date" --file out/target/product/amogus/"${buildName}".zip
+      git release upload --tag "$date" --file ../../../out/target/product/amogus/"${buildName}".zip
       echo -e "${GREEN}Upload: succesfull!${NC}"
       
-      cd ../../..
+      #cd ../../..
+      # already in root's sources
       ;;
     [Nn])
       echo -e "${YELLOW}No upload. ${NC}"
@@ -83,7 +84,8 @@ if ! bash device/huawei/hwcan/patches/apply.sh; then
 fi
 
 # Get ready for build commands
-cd ../../..
+#cd ../../..
+# already in lineage's root folder with sources
 source build/envsetup.sh
 lunch lineage_amogus-userdebug
 
