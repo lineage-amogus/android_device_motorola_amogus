@@ -53,3 +53,6 @@ endif
 TARGET_TAP_TO_WAKE_NODE := "/sys/class/sensors/dt-gesture/enable"
 
 include device/motorola/common/CommonConfig.mk
+
+# include GAPPS if exists
+$(call inherit-product-if-exists, vendor/gapps/arm64/arm64-vendor.mk)
