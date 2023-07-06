@@ -75,6 +75,8 @@ upload_build() {
   esac
 }
 
+echo -e "${GREEN}Running replace_camera_sepolicy.sh script...${NC}"
+bash device/motorola/targets/scripts/replace_camera_sepolicy.sh
 
 # Run apply.sh script
 echo -e "${GREEN}Running apply.sh script...${NC}"
