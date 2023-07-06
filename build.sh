@@ -80,7 +80,7 @@ bash device/motorola/targets/scripts/replace_camera_sepolicy.sh
 
 # Run apply.sh script
 echo -e "${GREEN}Running apply.sh script...${NC}"
-if ! bash device/huawei/hwcan/patches/apply.sh; then
+if ! bash device/motorola/amogus/patches/apply.sh; then
   echo -e "${RED}Failed to apply patches. Stopping the build.${NC}"
   exit 1
 fi
