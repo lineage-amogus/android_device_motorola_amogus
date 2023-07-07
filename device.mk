@@ -12,6 +12,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+# include gapps
+include vendor/gapps/arm64/arm64-vendor.mk
+
 # Device path
 PLATFORM_COMMON_PATH := device/motorola/amogus
 
